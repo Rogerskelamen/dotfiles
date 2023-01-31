@@ -2,13 +2,25 @@
 
 My personal dotfiles, feel free to read and copy
 
-The following contents are my guidance for archlinux configuring. For convenience, I write here in Chinese.
+The following content is my guidance for archlinux configuring. For convenience, I write here in Chinese.
 
 # Arch Linux 入坑指南
 
 本篇指南针对仅仅使用windows manager环境不用desktop environment的指南，总所周知(bushi)，如果摒弃DE之后，很多基本的配置都会消失，所以从WM开始配置确实堪称地狱难度。为此有必要写出本篇指南记录配置和入坑细节。
 
 *本指南的前提是你已经安装好了Arch Linux，并且已经安装并启动了任意一种WM环境(比如dwm，i3等)*
+
+## recommended WM
+
+- Xorg
+
+    i3/dwm/awesome-wm
+
+- Wayland
+
+    sway/hyprland
+
+    *Wayland对于intel显卡的电脑更为友好*
 
 ## backlight(背光)
 
@@ -40,7 +52,15 @@ yay -S alsa-utils
 
 接着根据[此文](https://wiki.archlinuxcn.org/wiki/Advanced_Linux_Sound_Architecture#%E8%A7%A3%E9%99%A4%E5%90%84%E5%A3%B0%E9%81%93%E7%9A%84%E9%9D%99%E9%9F%B3)进行设置
 
-如果想要进行管理的话，可以使用工具：
+通过amixer进行音量控制:
+
+```zsh
+amixer set Master 5%+  # 升高音量
+amixer set Master 5%+  # 降低音量
+amixer set Master mute # 静音，但是会使所有混响器全部静音
+```
+
+如果想要进行图形化管理操作的话，可以使用其他软件工具：
 
 - pulseaudio
 
@@ -110,4 +130,12 @@ yay -S lightdm lightdm-gtk-greeter
 
 ```zsh
 yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
+```
+
+## 字典
+
+可以使用命令行翻译软件[translate-shell](https://github.com/soimort/translate-shell)：
+
+```zsh
+yay -S translate-shell
 ```
