@@ -55,9 +55,9 @@ yay -S alsa-utils
 通过amixer进行音量控制:
 
 ```zsh
-amixer set Master 5%+  # 升高音量
-amixer set Master 5%+  # 降低音量
-amixer set Master mute # 静音，但是会使所有混响器全部静音
+amixer set Master 5%+ # 升高音量
+amixer set Master 5%+ # 降低音量
+amixer set Master 0%  # 静音
 ```
 
 如果想要进行图形化管理操作的话，可以使用其他软件工具：

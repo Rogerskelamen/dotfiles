@@ -85,14 +85,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ======================================
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -108,6 +100,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # ======================================
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -133,13 +132,15 @@ rg() {
 export VISUAL=nvim
 
 # proxy(clash for linux)
-export https_proxy=http://127.0.0.1:7890
-export http_proxy=http://127.0.0.1:7890
-export all_proxy=socks5://127.0.0.1:7890
+# export https_proxy=http://127.0.0.1:7890
+# export http_proxy=http://127.0.0.1:7890
+# export all_proxy=socks5://127.0.0.1:7890
 # SHELLPROXY_URL="http://127.0.0.1:7890"
 # proxy enable
 
 # go env
+export GOPATH=$HOME/Documents/programs/go
+export PATH=$PATH:${GOPATH//://bin:}/bin
 
 # nvm script
 source /usr/share/nvm/init-nvm.sh
