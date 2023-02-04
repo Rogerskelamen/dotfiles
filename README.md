@@ -6,7 +6,7 @@ The following content is my guidance for archlinux configuring. For convenience,
 
 # Arch Linux 入坑指南
 
-本篇指南针对仅仅使用windows manager环境不用desktop environment的指南，总所周知(bushi)，如果摒弃DE之后，很多基本的配置都会消失，所以从WM开始配置确实堪称地狱难度。为此有必要写出本篇指南记录配置和入坑细节。
+本篇指南针对仅仅使用windows manager环境不用desktop environment的指南，总所周知(bushi)，如果摒弃DE之后，很多系统基础软件和设置都不会存在，所以从WM开始配置确实堪称地狱难度。为此有必要写出本篇指南记录配置和入坑细节。
 
 *本指南的前提是你已经安装好了Arch Linux，并且已经安装并启动了任意一种WM环境(比如dwm，i3等)*
 
