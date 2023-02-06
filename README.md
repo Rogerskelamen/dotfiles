@@ -10,7 +10,7 @@ The following content is my guidance for archlinux configuring. For convenience,
 
 *本指南的前提是你已经安装好了Arch Linux，并且已经安装并启动了任意一种WM环境(比如dwm，i3等)*
 
-## recommended WM
+## Recommended WM
 
 - Xorg
 
@@ -22,7 +22,27 @@ The following content is my guidance for archlinux configuring. For convenience,
 
     *Wayland对于intel显卡的电脑更为友好*
 
-## backlight(背光)
+## NetWork(网络)
+
+- iwd
+
+如果你更倾向于使用命令行，可以使用iwd(Internet Wireless Daemon)，需要配合dhcpcd一起使用:
+
+```zsh
+yay -S iwd dhcpcd
+```
+
+*经过[一些配置](https://wiki.archlinuxcn.org/wiki/Iwd#%E5%90%AF%E7%94%A8%E5%86%85%E7%BD%AE%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE)，你也可以使用iwd内置的DHCP客户端*
+
+- NetworkManager
+
+需要注意的是，经过我的几次使用，发现这个命令行工具有时会出现故障，无法连接到到网络，即使已经连接上wifi
+
+所以可以安装一下NetworkManager(**一定要确保自己系统中有一个可以上网的工具，并且自己能够用它来连上互联网!**)
+
+所以可以改用NetWorkManager，
+
+## Backlight(背光)
 
 屏幕亮度的数据是存储在`/sys/class/backlight/intel_backlight`文件夹中的，所以如果需要调节亮度可修改文件夹下的`brightness`文件(需要root权限)，查看系统可支持的最大亮度可打印`max_brightness`的值
 
@@ -78,7 +98,7 @@ amixer set Master 0%  # 静音
 yay -S pulseaudio pavucontrol pasystray
 ```
 
-## display manager
+## Display manager
 
 如果你只安装了WM环境并且只能输入`startx`来启动，那很可能你需要一个display manager，我这里安装的是lightdm：
 
@@ -100,7 +120,7 @@ yay -S lightdm lightdm-gtk-greeter
 
 *PS: 刚开始rime的默认输入法是繁体的，需要按Ctrl+~来切换为简体*
 
-## 字体
+## Fonts(字体)
 
 - firacode-nerd
 
@@ -132,7 +152,7 @@ yay -S lightdm lightdm-gtk-greeter
 yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
 ```
 
-## 字典
+## Dictionary(字典)
 
 可以使用命令行翻译软件[translate-shell](https://github.com/soimort/translate-shell)：
 

@@ -131,10 +131,10 @@ rg() {
 
 export VISUAL=nvim
 
-# proxy(clash for linux)
-# export https_proxy=http://127.0.0.1:7890
-# export http_proxy=http://127.0.0.1:7890
-# export all_proxy=socks5://127.0.0.1:7890
+# proxy
+export https_proxy=http://127.0.0.1:20172
+export http_proxy=http://127.0.0.1:20171
+export all_proxy=socks5://127.0.0.1:20170
 # SHELLPROXY_URL="http://127.0.0.1:7890"
 # proxy enable
 
