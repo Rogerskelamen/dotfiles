@@ -50,6 +50,11 @@ yay -S iwd dhcpcd
 
 - brightnessctl
 
+```zsh
+brightnessctl s +5   # 增加5亮度
+brightnessctl s 5-   # 减少5亮度
+```
+
 ## 电量管理
 
 使用命令行工具acpi:`acpi -b`
@@ -109,6 +114,16 @@ yay -S lightdm lightdm-gtk-greeter
 然后参考[此文](https://wiki.archlinuxcn.org/wiki/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8#%E4%BC%9A%E8%AF%9D%E9%85%8D%E7%BD%AE)将你的wm配置到会话列表中，以便于lightdm读取并在登录页面显示。
 
 *可能需要安装xorg-xinit*
+
+## Composite Manager(合成器)
+
+在Xorg下，你可能需要额外安装一个合成器来对WM产生特定的渲染效果(如果是Wayland话，一般混成器就已经集成了特殊渲染效果，比如Hyprland)
+
+这里推荐使用[picom](https://wiki.archlinux.org/title/Picom)，我这里直接推荐使用picom-jonaburg-git(jonaburg对picom的fork，提供了很多开箱即用的渲染特性):
+
+```zsh
+yay -S picom-jonaburg-git
+```
 
 ## 中文输入法
 
