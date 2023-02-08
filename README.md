@@ -129,6 +129,16 @@ yay -S picom-jonaburg-git
 
 > 中文输入法本身有两种框架，ibus和fcitx，我在这里使用的是[fcitx5](https://fcitx-im.org/wiki/Fcitx_5/zh-cn)。
 
+安装完成之后还需要集成到系统中去，需要在`/etc/environment`文件中添加如下几行：
+
+```
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus
+```
+
 *PS: fcitx可以按Ctrl+;来显示剪切板*
 
 在fcitx5上的中文输入法引擎，[有很多种](https://fcitx-im.org/wiki/Input_method_engines#Chinese)，我选择的是[rime](https://rime.im/)，其有良好的扩展性和可移植性。
