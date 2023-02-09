@@ -103,6 +103,14 @@ amixer set Master 0%  # 静音
 yay -S pulseaudio pavucontrol pasystray
 ```
 
+## Music player(音乐播放器)
+
+不建议安装netease-cloud-music(网易云)，而是安装像yesplaymusic这样对网易云的封装软件，因为前者是deepin和网易合作开发的，已经很多年没有维护了。
+
+```zsh
+yay -S yesplaymusic
+```
+
 ## Display manager
 
 如果你只安装了WM环境并且只能输入`startx`来启动，那很可能你需要一个display manager，我这里安装的是lightdm：
