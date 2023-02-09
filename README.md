@@ -153,6 +153,15 @@ GLFW_IM_MODULE=ibus
 
 *PS: 刚开始rime的默认输入法是繁体的，需要按Ctrl+~来切换为简体*
 
+如果需要配置rime的话，需要在`~/.local/share/fcitx5/rime/default.custom.yaml`中设置，比如你想要设置出词的页数就在文件中写入：
+
+```yaml
+patch:
+  "menu/page_size": 7
+```
+
+<u>这里强烈推荐一下一款fcitx5的皮肤：[fcitx5-nord](https://github.com/tonyfettes/fcitx5-nord)</u>
+
 ## Fonts(字体)
 
 - firacode-nerd
