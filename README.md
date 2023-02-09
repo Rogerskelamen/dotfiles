@@ -81,7 +81,7 @@ yay -S alsa-utils
 
 ```zsh
 amixer set Master 5%+ # 升高音量
-amixer set Master 5%+ # 降低音量
+amixer set Master 5%- # 降低音量
 amixer set Master 0%  # 静音
 ```
 
