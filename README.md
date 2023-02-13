@@ -184,7 +184,7 @@ patch:
 
     文泉驿微米黑，质量很高的中文字体。作为我中文显示的主要字体，不用再去特意下载wqy-zenhei
 
-## 文件系统管理器
+## File manager(文件系统管理器)
 
 我一直使用的是ranger这个cli的file manager，所以在此记录ranger的使用指南。
 
@@ -192,6 +192,18 @@ patch:
 
 ```zsh
 yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
+```
+
+除此之外，为了使用kitty下的图片预览功能，还需要安装imagemagick:
+
+```zsh
+yay -S imagemagick
+```
+
+如果必须要一个图形界面的文件系统管理器，推荐安装nautilus:
+
+```zsh
+yay -S nautilus
 ```
 
 ## Dictionary(字典)
