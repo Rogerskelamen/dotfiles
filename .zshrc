@@ -119,6 +119,7 @@ compinit
 alias ra="rg"
 alias n="neofetch"
 alias lg="lazygit"
+alias lol="lolcat"
 
 rg() {
 	if [ -z "$RANGER_LEVEL" ]
@@ -132,15 +133,18 @@ rg() {
 export VISUAL=nvim
 
 # proxy
-export https_proxy=http://127.0.0.1:20172
-export http_proxy=http://127.0.0.1:20171
-export all_proxy=socks5://127.0.0.1:20170
+# export https_proxy=http://127.0.0.1:7890
+# export http_proxy=http://127.0.0.1:7890
+# export all_proxy=socks5://127.0.0.1:7890
 # SHELLPROXY_URL="http://127.0.0.1:7890"
 # proxy enable
 
 # go env
 export GOPATH=$HOME/Documents/programs/go
 export PATH=$PATH:${GOPATH//://bin:}/bin
+
+# c workspace env
+export PATH=$PATH:$HOME/Documents/programs/c/bin
 
 # nvm script
 source /usr/share/nvm/init-nvm.sh
