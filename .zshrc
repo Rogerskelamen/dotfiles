@@ -147,6 +147,9 @@ export PATH=$PATH:${GOPATH//://bin:}/bin
 # c workspace env
 export PATH=$PATH:$HOME/Documents/programs/c/bin
 
+# c include freetype2 in path
+export C_INCLUDE_PATH=/usr/include/freetype2
+
 # nvm script
 source /usr/share/nvm/init-nvm.sh
 
