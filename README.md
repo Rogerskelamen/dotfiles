@@ -51,7 +51,7 @@ yay -S iwd dhcpcd
 - brightnessctl
 
 ```zsh
-brightnessctl s +5   # 增加5亮度
+brightnessctl s 5+   # 增加5亮度
 brightnessctl s 5-   # 减少5亮度
 ```
 
@@ -212,4 +212,18 @@ yay -S nautilus
 
 ```zsh
 yay -S translate-shell
+```
+
+## Editor(文本编辑器)
+
+当然是用伟大的Vim编辑器啦！(*当然我自己用的是NeoVim*)
+
+```zsh
+yay -S neovim
+```
+
+但有时候我们在编辑binary(二进制)文件的时候，想用到xxd指令转码。这时候就发现xxd是vim内置的程序，单独安装neovim是没有的，那我们就得额外安装一下xxd：
+
+```zsh
+yay -S xxd-standalone
 ```
