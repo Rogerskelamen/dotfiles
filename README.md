@@ -222,7 +222,7 @@ yay -S translate-shell
 yay -S neovim
 ```
 
-但有时候我们在编辑binary(二进制)文件的时候，想用到xxd指令转码。这时候就发现xxd是vim内置的程序，单独安装neovim是没有的，那我们就得额外安装一下xxd：
+但有时候我们在编辑binary(二进制)文件的时候，想用到`xxd`指令转码。这时候就发现`xxd`是vim内置的程序，单独安装neovim是没有的，那我们就得额外安装一下`xxd`：
 
 ```zsh
 yay -S xxd-standalone
