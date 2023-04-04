@@ -69,7 +69,7 @@ brightnessctl s 5-   # 减少5亮度
 
 ## 音量控制
 
-首先安装`alsa`:
+首先安装`alsa`(Advanced Linux Sound Architecture):
 
 ```zsh
 yay -S alsa-utils
@@ -89,7 +89,7 @@ amixer set Master 0%  # 静音
 
 - pulseaudio
 
-    声音服务器，是上次软件和声卡等硬件进行通信的桥梁
+    声音服务器，是上述软件和声卡等硬件进行通信的桥梁
 
 - pavucontrol
 
@@ -200,6 +200,12 @@ yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
 yay -S imagemagick
 ```
 
+但是最好还是使用ueberzug(虽然已经停止维护)，因为ranger对它的支持是最好的。
+
+```zsh
+yay -S ueberzug
+```
+
 如果必须要一个图形界面的文件系统管理器，推荐安装nautilus:
 
 ```zsh
@@ -227,3 +233,19 @@ yay -S neovim
 ```zsh
 yay -S xxd-standalone
 ```
+
+## PDF/EPUB Viewer(阅读器)
+
+PDF阅读器我暂时使用的是evince，因为它拥有vim模式的移动方式，统一了我的工作环境：
+
+```zsh
+yay -S evince
+```
+
+在尝试了很久的EPUB阅读器之后(包括[ebook-viewer](https://github.com/michaldaniel/ebook-viewer))，我发现了[foliate](https://johnfactotum.github.io/foliate/)，并认定它为唯一真神：
+
+```zsh
+yay -S foliate
+```
+
+*Note: 需要注意的是，ranger本身不适配foliate，所以需要手动添加(直接拷贝我的dotfiles就好了)*
