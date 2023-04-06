@@ -121,6 +121,7 @@ alias ra="rg"
 alias n="neofetch"
 alias lg="lazygit"
 alias lol="lolcat"
+alias vd="yt-dlp"
 
 rg() {
 	if [ -z "$RANGER_LEVEL" ]
