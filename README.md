@@ -123,6 +123,16 @@ yay -S lightdm lightdm-gtk-greeter
 
 *可能需要安装xorg-xinit*
 
+## Screen Locker
+
+你可能想要安装一个锁屏软件，这样你要是有事暂时离开你的电脑也不用担心有人擅自使用你的电脑了。这里如果已经安装了`lightdm`的话，建议使用`light-locker`相互配合：
+
+```zsh
+yay -S light-locker
+```
+
+设置好开机autostart之后，就可以使用`light-locker-command -l`来锁定屏幕了
+
 ## Composite Manager(合成器)
 
 在Xorg下，你可能需要额外安装一个合成器来对WM产生特定的渲染效果(如果是Wayland话，一般混成器就已经集成了特殊渲染效果，比如Hyprland)

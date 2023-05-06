@@ -151,6 +151,9 @@ export PATH=$PATH:$HOME/Documents/programs/c/bin
 # c include freetype2 in path
 export C_INCLUDE_PATH=/usr/include/freetype2
 
+# add cross-compilers(i386-elf) to PATH
+export PATH=$PATH:/usr/local/i386elfgcc/bin
+
 # caca env
 export CACA_DRIVER=ncurses
 
