@@ -122,6 +122,7 @@ alias n="neofetch"
 alias lg="lazygit"
 alias lol="lolcat"
 alias vd="yt-dlp"
+alias kssh="kitty +kitten ssh"
 
 rg() {
 	if [ -z "$RANGER_LEVEL" ]
