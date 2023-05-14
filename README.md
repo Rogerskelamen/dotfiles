@@ -194,6 +194,10 @@ patch:
 
     文泉驿微米黑，质量很高的中文字体。作为我中文显示的主要字体，不用再去特意下载wqy-zenhei
 
+- noto-fonts-emoji
+
+    提供emoji图标支持，同为谷歌的noto系列，基本上可以满足大部分emoji图标需求(本人的dwm状态栏图标也是用的noto-fonts-emoji)
+
 ## File manager(文件系统管理器)
 
 我一直使用的是ranger这个cli的file manager，所以在此记录ranger的使用指南。
