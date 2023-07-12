@@ -36,11 +36,34 @@ yay -S iwd dhcpcd
 
 - NetworkManager
 
-需要注意的是，经过我的几次使用，发现这个命令行工具有时会出现故障，无法连接到到网络，即使已经连接上wifi
+如果你倾向于使用更为现代化和用户友好的软件，建议使用NetworkManager。它最初由红帽开发的网络管理工具，现由GNOME进行管理和维护，[这是](https://networkmanager.dev/)它的官网。
 
-所以可以安装一下NetworkManager(**一定要确保自己系统中有一个可以上网的工具，并且自己能够用它来连上互联网!**)
+那么可以安装一下NetworkManager(**一定要确保自己系统中有一个可以上网的工具，并且自己能够用它来连上互联网!**):
 
-所以可以改用NetWorkManager，
+```zsh
+yay -S networkmanager
+```
+
+*注意，NetworkManager已内置DHCP服务客户端*
+
+使用自带的命令行工具`nmcli`进行网络的配置:
+
+```zsh
+nmcli device wifi list  # 列出附近的Wi-Fi
+nmcli device wifi connect SSID password 88888888  # 连接到一个Wi-Fi网络
+nmcli device wifi show-password  # 显示当前连接Wi-Fi网络的密码
+nmcli connection show  # 显示已记录连接的列表
+nmcli connection up NAME  # 激活连接
+nmcli radio wifi off/on   # 关闭/开启Wi-Fi
+```
+
+*更多详情请看[arch维基](https://wiki.archlinuxcn.org/zh-hans/NetworkManager)*
+
+当然，我们可以安装一个系统托盘工具来管理networkmanager:
+
+```zsh
+yay -S network-manager-applet
+```
 
 ## Backlight(背光)
 
