@@ -237,11 +237,17 @@ yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
 yay -S imagemagick
 ```
 
-但是最好还是使用ueberzug(虽然已经停止维护)，因为ranger对它的支持是最好的。
+最好还是使用ueberzug(虽然原作者已经停止维护该项目)，因为ranger对它的支持是最好的。
 
 ```zsh
 yay -S ueberzug
 ```
+
+为了ranger更好的用户体验，我还安装了以下插件:
+
+- [ranger-devicons2](https://github.com/cdump/ranger-devicons2)
+
+    用glyphs图标的形式显示文件的类型
 
 如果必须要一个图形界面的文件系统管理器，推荐安装nautilus:
 
