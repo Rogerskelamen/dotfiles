@@ -1,0 +1,83 @@
+# $ -- shell command
+# % -- command with tui
+
+# This configuration file adds some commands to lf file manager for windows.
+# Requirements : 
+# - git-for-windows
+# - highlight
+
+# interpreter for shell commands (needs to be POSIX compatible)
+# On Windows, it can be cmd, powershell(along with system), pwsh(core 6+)
+set shell cmd
+
+# set '-eu' options for shell commands
+# These options are used to have safer shell commands. Option '-e' is used to
+# exit on error and option '-u' is used to give error for unset variables.
+# Option '-f' disables pathname expansion which can be useful when $f, $fs, and
+# $fx variables contain names with '*' or '?' characters. However, this option
+# is used selectively within individual commands as it can be limiting at
+# times.
+#set shellopts '-eu'
+
+# set internal field separator (IFS) to "\n" for shell commands
+# This is useful to automatically split file names in $fs and $fx properly
+# since default file separator used in these variables (i.e. 'filesep' option)
+# is newline. You need to consider the values of these options and create your
+# commands accordingly.
+set ifs "\n"
+
+# set icons
+set icons
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+# change the default open command to work in powerShell
+# cmd open &start $Env:f
+
+# change the editor used in default editor keybinding
+# There is no builtin terminal editor installed in Windows. The default editor
+# mapping uses 'notepad' which launches in a separate GUI window. You may
+# instead install a terminal editor of your choice and replace the default
+# editor keybinding accordingly.
+# map e $nvim $Env:f
+
+# use enter for shell commands
+map <enter> shell
+
+# delete files
+map D delete
+
+# show the result of execution of previous commands
+# map ` !true
+
+# mkdir command. See wiki if you want it to select created dir
+map a :push %mkdir<space>
+
+# create new file by neovim
+map e :push $nvim<space>
+
+# remap
+map o $%EDITOR% %f%
+
+# cmd rename %sh -c 'if [ -e $0 ]; then echo file exists; else mv $f $0; fi'
+map r rename
+
+# goto maps
+map g. cd ~\\AppData\\Local
+map gd cd ~\\Downloads
+map gp cd D:\\program
+map gw cd ~\\Documents\\Workspace
+
+map J push 5j
+map K push 5k
+
+# open explorer at current path
+map E $explorer .
+
+# show documentation (overrides 'search-back' command)
+map ? $lf -doc | less
+
+# map w $sh -c 'cd $f ; exec bash'
+# map i $highlight --out-format=ansi %f% | less -R
+# map I $less %f%
