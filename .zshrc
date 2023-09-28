@@ -149,8 +149,6 @@ export PATH=$PATH:${GOPATH//://bin:}/bin
 # c workspace env
 export PATH=$PATH:$HOME/Documents/programs/c/bin
 
-# add cross-compilers(i386-elf) to PATH
-export PATH=$PATH:/usr/local/i386elfgcc/bin
 
 # fix misbehaving java applications when use dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
