@@ -6,9 +6,9 @@ The following content is my guidance for archlinux configuring. For convenience,
 
 # Screenshot
 
-![desktop-screenshot-1](https://github.com/Rogerskelamen/dotfiles/tree/master/static/images/desktop-screenshot-1.png)
+![desktop-screenshot-1](https://raw.githubusercontent.com/Rogerskelamen/dotfiles/master/static/images/desktop-screenshot-1.png)
 
-![desktop-screenshot-2](https://github.com/Rogerskelamen/dotfiles/tree/master/static/images/desktop-screenshot-2.png)
+![desktop-screenshot-2](https://raw.githubusercontent.com/Rogerskelamen/dotfiles/master/static/images/desktop-screenshot-2.png)
 
 # Arch Linux 入坑指南
 
