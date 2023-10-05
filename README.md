@@ -4,6 +4,12 @@ My personal dotfiles, feel free to read and copy
 
 The following content is my guidance for archlinux configuring. For convenience, I write here in Chinese.
 
+# Screenshot
+
+![desktop-screenshot-1](https://github.com/Rogerskelamen/dotfiles/tree/master/static/images/desktop-screenshot-1.png)
+
+![desktop-screenshot-2](https://github.com/Rogerskelamen/dotfiles/tree/master/static/images/desktop-screenshot-2.png)
+
 # Arch Linux 入坑指南
 
 本篇指南针对仅仅使用windows manager环境不用desktop environment的指南，总所周知(bushi)，如果摒弃DE之后，很多系统基础软件和设置都不会存在，所以从WM开始配置确实堪称地狱难度。为此有必要写出本篇指南记录配置和入坑细节。
