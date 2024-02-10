@@ -1,0 +1,276 @@
+/*
+ * ==== VScode config with Vim keymap extension ====
+ * default shortcut:
+ *  - gd: goto the definition
+ *  - gh: show hover
+ */
+{
+    /* General Config */
+    "workbench.settings.editor": "json",
+    "editor.suggest.insertMode": "replace",
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    /* Theme */
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    /* Editor */
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontSize": 17,
+    "editor.fontLigatures": true,
+    "editor.minimap.autohide": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.linkedEditing": true,
+    "editor.inlineSuggest.enabled": true,
+    /* cursor */
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorSurroundingLines": 5, // edit screen offset
+    /* Terminal */
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    /* bracket */
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    /* Vim Config */
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(230, 100, 170, 0.7)",
+    "vim.foldfix": true, // consistent fold
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<S-s>"],
+            "commands": ["workbench.action.files.save"],
+            "silent": true
+        },
+        {
+            "before": ["<S-q>"],
+            "commands": ["workbench.action.closeActiveEditor"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "o"],
+            "commands": ["editor.toggleFold"],
+            "silent": true
+        },
+        {
+            "before": ["<C-a>"],
+            "after": ["g", "g", "V", "G"]
+        },
+        {
+            "before": ["<S-j>"],
+            "after": ["5", "j"],
+        },
+        {
+            "before": ["<S-k>"],
+            "after": ["5", "k"],
+        },
+        {
+            "before": ["<S-h>"],
+            "after": ["^"],
+        },
+        {
+            "before": ["<S-l>"],
+            "after": ["$"],
+        },
+        {
+            "before": ["<S-w>"],
+            "after": ["5", "w"],
+        },
+        {
+            "before": ["<S-b>"],
+            "after": ["5", "b"],
+        },
+        {
+            "before": ["t", "l"],
+            "commands": [":tabnext"],
+            "silent": true
+        },
+        {
+            "before": ["t", "h"],
+            "commands": [":tabprev"],
+            "silent": true
+        },
+        /* window */
+        {
+            "before": ["<leader>", "h"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<leader>", "k"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": [":sp"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "v"],
+            "commands": [":vsp"],
+            "silent": true
+        },
+        /* file explorer */
+        {
+            "before": ["<leader>", "e"],
+            // "commands": ["workbench.view.explorer"],
+            "commands": ["workbench.action.toggleSidebarVisibility"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["workbench.action.toggleActivityBarVisibility"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "/"],
+            "commands": [":nohl"],
+            "silent": true
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"],
+            "silent": true
+        },
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"],
+            "silent": true
+        },
+        {
+            "before": ["g", "]"],
+            "commands": ["editor.action.marker.next"],
+            "silent": true
+        },
+        {
+            "before": ["g", "["],
+            "commands": ["editor.action.marker.prev"],
+            "silent": true
+        },
+        {
+            "before": ["g", "x"],
+            "commands": ["editor.action.quickFix"],
+            "silent": true
+        },
+        /* git hunk */
+        // {
+        //     "before": ["<leader>", "<S-h>"],
+        //     "commands": ["workbench.view.scm"],
+        //     "silent": true
+        // },
+        {
+            "before": ["g", "="],
+            "commands": ["workbench.action.editor.nextChange"],
+            "silent": true
+        },
+        {
+            "before": ["g", "-"],
+            "commands": ["workbench.action.editor.previousChange"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "c", "<leader>"],
+            "after": ["g", "c", "c"]
+        },
+        {
+            "before": ["<leader>", "c", "b"],
+            "after": ["g", "C", "C"]
+        }
+        // {
+        //     "before": [":"],
+        //     "commands": [
+        //         "workbench.action.showCommands",
+        //     ],
+        //     "silent": true
+        // }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<S-j>"],
+            "after": ["5", "j"],
+        },
+        {
+            "before": ["<S-k>"],
+            "after": ["5", "k"],
+        },
+        {
+            "before": ["<S-h>"],
+            "after": ["^"],
+        },
+        {
+            "before": ["<S-l>"],
+            "after": ["$", "h"],
+        },
+        {
+            "before": ["<S-w>"],
+            "after": ["5", "w"],
+        },
+        {
+            "before": ["<S-b>"],
+            "after": ["5", "b"],
+        },
+        {
+            "before": ["p"],
+            "after": ["p", "g", "v", "y"]
+        },
+        {
+            "before": ["<leader>", "c", "<leader>"],
+            "after": ["g", "c"]
+        },
+        {
+            "before": ["<leader>", "c", "b"],
+            "after": ["g", "C"]
+        }
+    ],
+    /* python */
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+    /* vue */
+    "vetur.ignoreProjectWarning": true,
+    // 对四种前端语言设置缩进为2个空格
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.tabSize": 2
+    },
+    "[less]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+
+    /* Code Runner */
+    "code-runner.runInTerminal": true,
+    // 更改code runner的部分语言的 map样式
+    "code-runner.executorMap": {
+        // "python": "python -u",
+        "python": "$pythonPath $fullFileName",
+        // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    },
+
+    /* Flutter and Dart */
+    "[dart]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+    },
+    // 对flutter运行指令参数添加“忽略safety模式”
+    // "dart.flutterAdditionalArgs": [
+    //     "--no-sound-null-safety"
+    // ]
+}
