@@ -150,6 +150,8 @@ export PATH=$PATH:${GOPATH//://bin:}/bin
 # c workspace env
 export PATH=$PATH:$HOME/Documents/programs/c/bin
 
+# firtool
+export PATH=$PATH:/usr/local/share/firtool-1.58.0/bin
 
 # fix misbehaving java applications when use dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
