@@ -34,7 +34,7 @@ The following content is my guidance for archlinux configuring. For convenience,
 
 如果你更倾向于使用命令行，可以使用iwd(Internet Wireless Daemon)，需要配合dhcpcd一起使用:
 
-```zsh
+```bash
 yay -S iwd dhcpcd
 ```
 
@@ -46,7 +46,7 @@ yay -S iwd dhcpcd
 
 那么可以安装一下NetworkManager(**一定要确保自己系统中有一个可以上网的工具，并且自己能够用它来连上互联网!**):
 
-```zsh
+```bash
 yay -S networkmanager
 ```
 
@@ -54,7 +54,7 @@ yay -S networkmanager
 
 使用自带的命令行工具`nmcli`进行网络的配置:
 
-```zsh
+```bash
 nmcli device wifi list  # 列出附近的Wi-Fi
 nmcli device wifi connect SSID password 88888888  # 连接到一个Wi-Fi网络
 nmcli device wifi show-password  # 显示当前连接Wi-Fi网络的密码
@@ -67,7 +67,7 @@ nmcli radio wifi off/on   # 关闭/开启Wi-Fi
 
 当然，我们可以安装一个系统托盘工具来管理networkmanager:
 
-```zsh
+```bash
 yay -S network-manager-applet
 ```
 
@@ -79,10 +79,21 @@ yay -S network-manager-applet
 
 - brightnessctl
 
-```zsh
+```bash
 brightnessctl s 5+   # 增加5亮度
 brightnessctl s 5-   # 减少5亮度
 ```
+
+## Dark mode(暗黑模式)
+
+很多操作系统(*比如MacOS和移动端OS*)都支持在傍晚将系统的明亮主题切换为暗黑主题，如果想要在只有WM的Archlinux上实现这一特性，可以参考[官方文档](https://wiki.archlinux.org/title/Dark_mode_switching)。主要需要安装的软件包：
+
+```bash
+yay -S gnome-themes-extra adwaita-qt5-git adwaita-qt6-git # themes
+yay -S darkman # themes control
+```
+
+这里主要安装的是gnome默认主题adwaita的dark版本，如果想要其他themes请自行下载安装
 
 ## 电量管理
 
@@ -100,7 +111,7 @@ brightnessctl s 5-   # 减少5亮度
 
 首先安装`alsa`(Advanced Linux Sound Architecture):
 
-```zsh
+```bash
 yay -S alsa-utils
 ```
 
@@ -108,7 +119,7 @@ yay -S alsa-utils
 
 通过amixer进行音量控制:
 
-```zsh
+```bash
 amixer set Master 5%+ # 升高音量
 amixer set Master 5%- # 降低音量
 amixer set Master 0%  # 静音
@@ -128,7 +139,7 @@ amixer set Master 0%  # 静音
 
     可以调用pavucontrol，用来管理声音的系统托盘软件
 
-```zsh
+```bash
 yay -S pulseaudio pavucontrol pasystray
 ```
 
@@ -136,7 +147,7 @@ yay -S pulseaudio pavucontrol pasystray
 
 不建议安装netease-cloud-music(网易云)，而是安装像yesplaymusic这样对网易云的封装软件，因为前者是deepin和网易合作开发的，已经很多年没有维护了。
 
-```zsh
+```bash
 yay -S yesplaymusic
 ```
 
@@ -144,7 +155,7 @@ yay -S yesplaymusic
 
 如果你只安装了WM环境并且只能输入`startx`来启动，那很可能你需要一个display manager，我这里安装的是lightdm：
 
-```zsh
+```bash
 yay -S lightdm lightdm-gtk-greeter
 ```
 
@@ -156,7 +167,7 @@ yay -S lightdm lightdm-gtk-greeter
 
 你可能想要安装一个锁屏软件，这样你要是有事暂时离开你的电脑也不用担心有人擅自使用你的电脑了。这里如果已经安装了`lightdm`的话，建议使用`light-locker`相互配合：
 
-```zsh
+```bash
 yay -S light-locker
 ```
 
@@ -168,7 +179,7 @@ yay -S light-locker
 
 这里推荐使用[picom](https://wiki.archlinux.org/title/Picom)，我这里直接推荐使用picom-jonaburg-git(jonaburg对picom的fork，提供了很多开箱即用的渲染特性):
 
-```zsh
+```bash
 yay -S picom-jonaburg-git
 ```
 
@@ -233,19 +244,19 @@ patch:
 
 如果使用了我的dotfiles，就需要安装对应的软件来确保ranger能够正确预览文件：
 
-```zsh
+```bash
 yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
 ```
 
 除此之外，为了使用kitty下的图片预览功能，还需要安装imagemagick:
 
-```zsh
+```bash
 yay -S imagemagick
 ```
 
 最好还是使用ueberzug(虽然原作者已经停止维护该项目)，因为ranger对它的支持是最好的。
 
-```zsh
+```bash
 yay -S ueberzug
 ```
 
@@ -257,7 +268,7 @@ yay -S ueberzug
 
 如果必须要一个图形界面的文件系统管理器，推荐安装nautilus:
 
-```zsh
+```bash
 yay -S nautilus
 ```
 
@@ -265,7 +276,7 @@ yay -S nautilus
 
 可以使用命令行翻译软件[translate-shell](https://github.com/soimort/translate-shell)：
 
-```zsh
+```bash
 yay -S translate-shell
 ```
 
@@ -273,13 +284,13 @@ yay -S translate-shell
 
 当然是用伟大的Vim编辑器啦！(*当然我自己用的是NeoVim*)
 
-```zsh
+```bash
 yay -S neovim
 ```
 
 但有时候我们在编辑binary(二进制)文件的时候，想用到`xxd`指令转码。这时候就发现`xxd`是vim内置的程序，单独安装neovim是没有的，那我们就得额外安装一下`xxd`：
 
-```zsh
+```bash
 yay -S xxd-standalone
 ```
 
@@ -287,13 +298,13 @@ yay -S xxd-standalone
 
 PDF阅读器我暂时使用的是evince，因为它拥有vim模式的移动方式，统一了我的工作环境：
 
-```zsh
+```bash
 yay -S evince
 ```
 
 在尝试了很久的EPUB阅读器之后(包括[ebook-viewer](https://github.com/michaldaniel/ebook-viewer))，我发现了[foliate](https://johnfactotum.github.io/foliate/)，并认定它为唯一真神：
 
-```zsh
+```bash
 yay -S foliate
 ```
 
