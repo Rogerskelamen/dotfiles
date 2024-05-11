@@ -10,6 +10,7 @@
     "temperature",
     "custom/date",
     "clock",
+    "custom/screenshot",
     "custom/power"
   ],
 
@@ -51,7 +52,7 @@
   },
 
   "clock": {
-    "format": "󰅐 {:%H:%M} ",
+    "format": "󰅐 {:%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
 
@@ -105,6 +106,15 @@
       "default": ["", "", ""]
     }
   },
+
+  "custom/screenshot": {
+    "format": "󰹑 ",
+    "on-click": "grimblast --notify save area",
+    "on-click-middle": "grimblast --notify save",
+    "on-click-right": "grimblast --notify save active",
+    "tooltip": false
+  },
+
   "custom/power": {
      "format": " ",
      "on-click": "wlogout -b 6",
