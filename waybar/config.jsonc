@@ -53,13 +53,13 @@
 
   "clock": {
     "format": "󰅐 {:%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
   "battery": {
     "states": {
       "warning": 20,
-      "critical": 10,
+      "critical": 10
     },
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
@@ -110,8 +110,7 @@
   "custom/screenshot": {
     "format": "󰹑 ",
     "on-click": "grimblast --notify save area",
-    "on-click-middle": "grimblast --notify save",
-    "on-click-right": "grimblast --notify save active",
+    "on-click-right": "grimblast --notify save",
     "tooltip": false
   },
 
