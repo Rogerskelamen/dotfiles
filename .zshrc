@@ -71,7 +71,6 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	z
 	git
 	themes
 	extract
@@ -161,3 +160,6 @@ source /usr/share/nvm/init-nvm.sh
 
 # use starship for zsh theme
 eval "$(starship init zsh)"
+
+# use zoxide for autojumping
+eval "$(zoxide init zsh)"
