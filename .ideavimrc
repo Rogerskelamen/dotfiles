@@ -1,0 +1,40 @@
+" common options
+set wildmenu
+set scrolloff=5
+set ignorecase
+set smartcase
+set incsearch
+set clipboard=unnamedplus
+filetype plugin indent on
+
+" quick moving
+noremap <S-h> 5h
+noremap <S-j> 5j
+noremap <S-k> 5k
+noremap <S-l> 5l
+noremap <S-w> 5w
+noremap <S-b> 5b
+
+" Better Window navigation
+nnoremap <LEADER>h <C-w>h
+nnoremap <LEADER>j <C-w>j
+nnoremap <LEADER>k <C-w>k
+nnoremap <LEADER>l <C-w>l
+
+" quick quit
+nnoremap <S-q> :q<CR>
+" close default <S-s>
+nnoremap <S-s> <nop>
+
+" quick indent
+nnoremap < <<
+nnoremap > >>
+vnoremap < <gv
+vnoremap > >gv
+
+" Find and replace
+nnoremap \s :%s//g<Left><Left>
+
+" map quick document tips to `gh`
+nnoremap gh :action QuickJavaDoc<CR>
+nnoremap gx :action ShowIntentionActions<CR>
