@@ -4,6 +4,7 @@ set scrolloff=5
 set ignorecase
 set smartcase
 set incsearch
+set visualbell
 set clipboard=unnamedplus
 filetype plugin indent on
 
