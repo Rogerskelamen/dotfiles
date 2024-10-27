@@ -15,7 +15,7 @@ Import-Module "C:\Program Files\WindowsPowerShell\Modules\terminal-icons\0.11.0\
 
 # go env
 $Env:CGO_ENABLED=0
-$Env:GOPATH="D:\program\go"
+$Env:GOPATH="D:\programs\go"
 
 ##
 ### 设置PSReadLine
@@ -62,3 +62,6 @@ function which
 ##
 Set-Alias n winfetch
 Set-Alias lg lazygit
+
+# Enable zoxide(jump tool)
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
