@@ -6,6 +6,8 @@ $Env:http_proxy="http://127.0.0.1:7890";$Env:https_proxy="http://127.0.0.1:7890"
 # export default command line app
 $Env:EDITOR="nvim"
 $Env:PAGER="less"
+# Enable yazi to recognize files on Windows
+$Env:YAZI_FILE_ONE="C:\Program Files\Git\usr\bin\file.exe"
 
 # Enable oh-my-posh and config it
 oh-my-posh init pwsh --config "$Env:POSH_THEMES_PATH/catppuccin.omp.json" | Invoke-Expression
@@ -63,5 +65,17 @@ function which
 Set-Alias n winfetch
 Set-Alias lg lazygit
 
-# Enable zoxide(jump tool)
+# A better way to use yazi(change directory when exit)
+function ya {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath $cwd
+    }
+    Remove-Item -Path $tmp
+}
+
+
+# Enable zoxide(auto jump tool)
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
