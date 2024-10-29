@@ -7,6 +7,8 @@ ratio = [2, 3, 3]
 sort_by = "natural"
 sort_dir_first = true
 linemode = "size"
+show_symlink = true
+scrolloff = 5
 
 [opener]
 edit = [

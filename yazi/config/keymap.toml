@@ -3,6 +3,7 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [manager]
+
 keymap = [
   { on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
   { on = "<C-[>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
@@ -41,18 +42,18 @@ keymap = [
   { on = "H", run = "back", desc = "Go back to the previous directory" },
   { on = "L", run = "forward", desc = "Go forward to the next directory" },
 
-# Seeking
+  # Seeking
   { on = "K", run = "seek -5", desc = "Seek up 5 units in the preview" },
   { on = "J", run = "seek 5", desc = "Seek down 5 units in the preview" },
 
-# Selection
+  # Selection
   { on = "<Space>", run = ["select --state=none", "arrow 1"], desc = "Toggle the current selection state" },
   { on = "v", run = "visual_mode", desc = "Enter visual mode (selection mode)" },
   { on = "V", run = "visual_mode --unset", desc = "Enter visual mode (unset mode)" },
   { on = "<C-a>", run = "select_all --state=true", desc = "Select all files" },
   { on = "<C-r>", run = "select_all --state=none", desc = "Inverse selection of all files" },
 
-# Operation
+  # Operation
   { on = "o", run = "open", desc = "Open selected files" },
   { on = "O", run = "open --interactive", desc = "Open selected files interactively" },
   { on = "<Enter>", run = "open", desc = "Open selected files" },
@@ -79,7 +80,7 @@ keymap = [
   { on = "z", run = "plugin zoxide", desc = "Jump to a directory using zoxide" },
   { on = "Z", run = "plugin fzf", desc = "Jump to a directory or reveal a file using fzf" },
 
-# Linemode
+  # Linemode
   { on = ["m", "s"], run = "linemode size", desc = "Set linemode to size" },
   { on = ["m", "p"], run = "linemode permissions", desc = "Set linemode to permissions" },
   { on = ["m", "c"], run = "linemode ctime", desc = "Set linemode to ctime" },
@@ -87,22 +88,22 @@ keymap = [
   { on = ["m", "o"], run = "linemode owner", desc = "Set linemode to owner" },
   { on = ["m", "n"], run = "linemode none", desc = "Set linemode to none" },
 
-# Copy
+  # Copy
   { on = ["c", "c"], run = "copy path", desc = "Copy the file path" },
   { on = ["c", "d"], run = "copy dirname", desc = "Copy the directory path" },
   { on = ["c", "f"], run = "copy filename", desc = "Copy the filename" },
   { on = ["c", "n"], run = "copy name_without_ext", desc = "Copy the filename without extension" },
 
-# Filter
+  # Filter
   { on = "f", run = "filter --smart", desc = "Filter files" },
 
-# Find
+  # Find
   { on = "/", run = "find --smart", desc = "Find next file" },
   { on = "?", run = "find --previous --smart", desc = "Find previous file" },
   { on = "n", run = "find_arrow", desc = "Go to the next found" },
   { on = "N", run = "find_arrow --previous", desc = "Go to the previous found" },
 
-# Sorting
+  # Sorting
   { on = [",", "m"], run = ["sort modified --reverse=no", "linemode mtime"], desc = "Sort by modified time" },
   { on = [",", "M"], run = ["sort modified --reverse", "linemode mtime"], desc = "Sort by modified time (reverse)" },
   { on = [",", "c"], run = ["sort created --reverse=no", "linemode ctime"], desc = "Sort by created time" },
@@ -117,14 +118,14 @@ keymap = [
   { on = [",", "S"], run = ["sort size --reverse", "linemode size"], desc = "Sort by size (reverse)" },
   { on = [",", "r"], run = "sort random --reverse=no", desc = "Sort randomly" },
 
-# Goto
+  # Goto
   { on = ["g", "h"], run = "cd ~", desc = "Go to the home directory" },
   { on = ["g", "c"], run = "cd ~/.config", desc = "Go to the config directory" },
   { on = ["g", "d"], run = "cd ~/Downloads", desc = "Go to the downloads directory" },
   { on = ["g", "<Space>"], run = "cd --interactive", desc = "Go to a directory interactively" },
   { on = ["g", "p"], run = "cd D:/programs", desc = "Go to the programs directory" },
 
-# Tabs
+  # Tabs
   { on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },
 
   { on = "1", run = "tab_switch 0", desc = "Switch to the first tab" },
@@ -143,21 +144,21 @@ keymap = [
   { on = "{", run = "tab_swap -1", desc = "Swap current tab with previous tab" },
   { on = "}", run = "tab_swap 1", desc = "Swap current tab with next tab" },
 
-# Tasks
+  # Tasks
   { on = "w", run = "tasks_show", desc = "Show task manager" },
 
-# Help
+  # Help
   { on = "~", run = "help", desc = "Open help" },
   { on = "<F1>", run = "help", desc = "Open help" },
-  ]
+]
 
-  prepend_keymap = [
+prepend_keymap = [
   { on = ['c', 'm'], run = "plugin chmod", desc = "Chmod on selected files" },
   { on = "<Enter>", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
   { on = "<A-p>", run = "plugin --sync hide-preview", desc = "Hide or show preview" },
   { on = "M", run = "plugin --sync max-preview", desc = "Maximize or restore preview" },
   { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
-  ]
+]
 
 [tasks]
 
@@ -176,7 +177,7 @@ keymap = [
   { on = "<Enter>", run = "inspect", desc = "Inspect the task" },
   { on = "x", run = "cancel", desc = "Cancel the task" },
 
-# Help
+  # Help
   { on = "~", run = "help", desc = "Open help" },
   { on = "<F1>", run = "help", desc = "Open help" },
 ]
@@ -195,20 +196,20 @@ keymap = [
   { on = "<Up>", run = "arrow -1", desc = "Move cursor up" },
   { on = "<Down>", run = "arrow 1", desc = "Move cursor down" },
 
-# Help
+  # Help
   { on = "~", run = "help", desc = "Open help" },
   { on = "<F1>", run = "help", desc = "Open help" },
-  ]
+]
 
-  [input]
+[input]
 
-  keymap = [
+keymap = [
   { on = "<C-c>", run = "close", desc = "Cancel input" },
   { on = "<Enter>", run = "close --submit", desc = "Submit input" },
   { on = "<Esc>", run = "escape", desc = "Go back the normal mode, or cancel input" },
   { on = "<C-[>", run = "escape", desc = "Go back the normal mode, or cancel input" },
 
-# Mode
+  # Mode
   { on = "i", run = "insert", desc = "Enter insert mode" },
   { on = "a", run = "insert --append", desc = "Enter append mode" },
   { on = "I", run = ["move -999", "insert"], desc = "Move to the BOL, and enter insert mode" },
@@ -216,7 +217,7 @@ keymap = [
   { on = "v", run = "visual", desc = "Enter visual mode" },
   { on = "V", run = ["move -999", "visual", "move 999"], desc = "Enter visual mode and select all" },
 
-# Character-wise movement
+  # Character-wise movement
   { on = "h", run = "move -1", desc = "Move back a character" },
   { on = "l", run = "move 1", desc = "Move forward a character" },
   { on = "<Left>", run = "move -1", desc = "Move back a character" },
@@ -224,14 +225,14 @@ keymap = [
   { on = "<C-b>", run = "move -1", desc = "Move back a character" },
   { on = "<C-f>", run = "move 1", desc = "Move forward a character" },
 
-# Word-wise movement
+  # Word-wise movement
   { on = "b", run = "backward", desc = "Move back to the start of the current or previous word" },
   { on = "w", run = "forward", desc = "Move forward to the start of the next word" },
   { on = "e", run = "forward --end-of-word", desc = "Move forward to the end of the current or next word" },
   { on = "<A-b>", run = "backward", desc = "Move back to the start of the current or previous word" },
   { on = "<A-f>", run = "forward --end-of-word", desc = "Move forward to the end of the current or next word" },
 
-# Line-wise movement
+  # Line-wise movement
   { on = "0", run = "move -999", desc = "Move to the BOL" },
   { on = "$", run = "move 999", desc = "Move to the EOL" },
   { on = "<C-a>", run = "move -999", desc = "Move to the BOL" },
@@ -239,19 +240,19 @@ keymap = [
   { on = "<Home>", run = "move -999", desc = "Move to the BOL" },
   { on = "<End>", run = "move 999", desc = "Move to the EOL" },
 
-# Delete
+  # Delete
   { on = "<Backspace>", run = "backspace", desc = "Delete the character before the cursor" },
   { on = "<Delete>", run = "backspace --under", desc = "Delete the character under the cursor" },
   { on = "<C-h>", run = "backspace", desc = "Delete the character before the cursor" },
   { on = "<C-d>", run = "backspace --under", desc = "Delete the character under the cursor" },
 
-# Kill
+  # Kill
   { on = "<C-u>", run = "kill bol", desc = "Kill backwards to the BOL" },
   { on = "<C-k>", run = "kill eol", desc = "Kill forwards to the EOL" },
   { on = "<C-w>", run = "kill backward", desc = "Kill backwards to the start of the current word" },
   { on = "<A-d>", run = "kill forward", desc = "Kill forwards to the end of the current word" },
 
-# Cut/Yank/Paste
+  # Cut/Yank/Paste
   { on = "d", run = "delete --cut", desc = "Cut the selected characters" },
   { on = "D", run = ["delete --cut", "move 999"], desc = "Cut until the EOL" },
   { on = "c", run = "delete --cut --insert", desc = "Cut the selected characters, and enter insert mode" },
@@ -261,20 +262,20 @@ keymap = [
   { on = "p", run = "paste", desc = "Paste the copied characters after the cursor" },
   { on = "P", run = "paste --before", desc = "Paste the copied characters before the cursor" },
 
-# Undo/Redo
+  # Undo/Redo
   { on = "u", run = "undo", desc = "Undo the last operation" },
   { on = "<C-r>", run = "redo", desc = "Redo the last operation" },
 
-# Help
+  # Help
   { on = "~", run = "help", desc = "Open help" },
   { on = "<F1>", run = "help", desc = "Open help" },
-  ]
+]
 
-  prepend_keymap = [{ on = "<Esc>", run = "close", desc = "Cancel input" }]
+prepend_keymap = [{ on = "<Esc>", run = "close", desc = "Cancel input" }]
 
 
-  [confirm]
-  keymap = [
+[confirm]
+keymap = [
   { on = "<Esc>", run = "close", desc = "Cancel the confirm" },
   { on = "<C-[>", run = "close", desc = "Cancel the confirm" },
   { on = "<C-c>", run = "close", desc = "Cancel the confirm" },
@@ -289,14 +290,14 @@ keymap = [
   { on = "<Up>", run = "arrow -1", desc = "Move cursor up" },
   { on = "<Down>", run = "arrow 1", desc = "Move cursor down" },
 
-# Help
+  # Help
   { on = "~", run = "help", desc = "Open help" },
   { on = "<F1>", run = "help", desc = "Open help" },
-  ]
+]
 
-  [completion]
+[completion]
 
-  keymap = [
+keymap = [
   { on = "<C-c>", run = "close", desc = "Cancel completion" },
   { on = "<Tab>", run = "close --submit", desc = "Submit the completion" },
   { on = "<Enter>", run = ["close --submit", "close_input --submit"], desc = "Submit the completion and input" },
@@ -310,10 +311,10 @@ keymap = [
   { on = "<C-p>", run = "arrow -1", desc = "Move cursor up" },
   { on = "<C-n>", run = "arrow 1", desc = "Move cursor down" },
 
-# Help
+  # Help
   { on = "~", run = "help", desc = "Open help" },
   { on = "<F1>", run = "help", desc = "Open help" },
-  ]
+]
 
 [help]
 
