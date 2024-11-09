@@ -76,3 +76,6 @@ nnoremap <LEADER>ca A<Space>//<Space>
 nnoremap <LEADER>y :action PasteMultiple<CR>
 xnoremap p "_dP
 xnoremap P "_dp
+
+" Translate
+xnoremap <LEADER>t :action $EditorTranslateAction<CR>
