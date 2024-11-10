@@ -8,7 +8,7 @@
 
 window#waybar {
   background: transparent;
-  color: white;
+  color: #f0f0f0;
 }
 
 tooltip {
@@ -19,8 +19,13 @@ tooltip {
   border-color: #262626;
 }
 
+tooltip label {
+  color: #f0f0f0;
+}
+
 #workspaces button {
   padding: 5px 10px;
+  margin: 0 2px;
   color: #f0f0f0;
 }
 

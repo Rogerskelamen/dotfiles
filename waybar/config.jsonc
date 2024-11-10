@@ -1,6 +1,8 @@
 {
-  "position": "top",
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
   "height": 30,
+  "margin": "0 0 0 0",
   "modules-center": [
     "hyprland/workspaces",
     "network",
