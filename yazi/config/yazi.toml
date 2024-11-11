@@ -25,7 +25,7 @@ open = [
 [open]
 rules = [
   # Folder
-  { name = "*/", use = [ "edit", "open", "reveal" ] },
+  { name = "*/", use = [ "reveal", "open", "edit" ] },
   # Text
   { mime = "text/*", use = [ "edit", "reveal" ] },
   # Image

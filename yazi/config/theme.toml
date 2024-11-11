@@ -9,6 +9,7 @@
 # [flavor]
 # use = ""
 
+# copy the catppuccin-macchiato theme from https://github.com/catppuccin/yazi/blob/main/themes/macchiato/catppuccin-macchiato-blue.toml
 [manager]
 cwd = { fg = "#8bd5ca" }
 
