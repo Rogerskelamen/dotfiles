@@ -66,7 +66,7 @@ Set-Alias n winfetch
 Set-Alias lg lazygit
 
 # A better way to use yazi(change directory when exit)
-function ya {
+function ra {
     $tmp = [System.IO.Path]::GetTempFileName()
     yazi $args --cwd-file="$tmp"
     $cwd = Get-Content -Path $tmp
