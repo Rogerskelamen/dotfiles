@@ -1,10 +1,8 @@
 " set leader key
 noremap <Space> <nop>
 let mapleader = " "
-let maplocalleader = " "
 
 " Common Options
-set wildmenu
 set scrolloff=5
 set ignorecase
 set smartcase
