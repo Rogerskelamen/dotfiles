@@ -1,10 +1,8 @@
-" set leader key
+" Set leader key
 noremap <Space> <nop>
 let mapleader = " "
-let maplocalleader = " "
 
 " Common Options
-set wildmenu
 set scrolloff=5
 set ignorecase
 set smartcase
@@ -36,12 +34,12 @@ nnoremap <LEADER>k <C-w>k
 nnoremap <LEADER>l <C-w>l
 
 " Better Window Split
-nnoremap <LEADER>v :action SplitVertically<CR>
-nnoremap <LEADER>s :action SplitHorizontally<CR>
+nmap <LEADER>v <Action>(SplitVertically)
+nmap <LEADER>s <Action>(SplitHorizontally)
 
 " Better Tab Management
-nnoremap th :action PreviousTab<CR>
-nnoremap tl :action NextTab<CR>
+nmap th <Action>(PreviousTab)
+nmap tl <Action>(NextTab)
 
 " Quick Quit
 nnoremap <S-q> :q<CR>
@@ -57,25 +55,44 @@ vnoremap > >gv
 " Find and replace
 nnoremap \s :%s//g<Left><Left>
 
+" Plugins
+set surround
+set argtextobj
+
 " Better LSP
-nnoremap gh :action QuickJavaDoc<CR>
-nnoremap gl :action ShowErrorDescription<CR>
-nnoremap gn :action RenameElement<CR>
-nnoremap gx :action ShowIntentionActions<CR>
-nnoremap g[ :action GotoPreviousError<CR>
-nnoremap g] :action GotoNextError<CR>
+nmap gh <Action>(QuickJavaDoc)
+nmap gi <Action>(GotoImplementation)
+nmap gl <Action>(ShowErrorDescription)
+nmap gn <Action>(RenameElement)
+nmap gx <Action>(ShowIntentionActions)
+nmap g[ <Action>(GotoPreviousError)
+nmap g] <Action>(GotoNextError)
+
+" Better Method Jump
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
+" Telescope-like Navigation
+nmap <LEADER>ff <Action>(GotoFile)
+nmap <LEADER>fh <Action>(RecentFiles)
+nmap <LEADER>fw <Action>(FindInPath)
+nmap <LEADER>b <Action>(Switcher)
+
+" Format
+nmap \r <Action>(ShowReformatFileDialog)
 
 " Better comment
-noremap <LEADER>c<LEADER> :action CommentByLineComment<CR>
-noremap <LEADER>cb :action CommentByBlockComment<CR>
-nnoremap <LEADER>co o<ESC>:action CommentByLineComment<CR>A<Space>
-nnoremap <LEADER>cO O<ESC>:action CommentByLineComment<CR>A<Space>
-nnoremap <LEADER>ca A<Space>//<Space>
+map <LEADER>c<LEADER> <Action>(CommentByLineComment)
+map <LEADER>cb <Action>(CommentByBlockComment)
+nmap <LEADER>co o<ESC><Action>(CommentByLineComment)A<Space>
+nmap <LEADER>cO O<ESC><Action>(CommentByLineComment)A<Space>
+nmap <LEADER>ca A<Space>//<Space>
 
 " Better Yank and Paste
-nnoremap <LEADER>y :action PasteMultiple<CR>
+nmap <LEADER>y <Action>(PasteMultiple)
 xnoremap p "_dP
 xnoremap P "_dp
 
 " Translate
-xnoremap <LEADER>t :action $EditorTranslateAction<CR>
+xmap <LEADER>t <Action>($EditorTranslateAction)
+
