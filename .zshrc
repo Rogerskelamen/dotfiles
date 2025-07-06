@@ -92,6 +92,8 @@ SAVEHIST=1000
 setopt autocd
 setopt correct
 setopt sharehistory
+setopt HIST_IGNORE_DUPS
+
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
