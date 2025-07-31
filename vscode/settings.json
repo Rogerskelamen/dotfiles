@@ -159,6 +159,11 @@
             "silent": true
         },
         {
+            "before": ["g", "n"],
+            "commands": ["editor.action.rename"],
+            "silent": true
+        },
+        {
             "before": ["g", "x"],
             "commands": ["editor.action.quickFix"],
             "silent": true
