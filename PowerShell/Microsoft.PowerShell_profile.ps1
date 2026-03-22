@@ -55,7 +55,7 @@ function which
 ##
 ### Alias
 ##
-Set-Alias n winfetch
+Set-Alias n fastfetch
 Set-Alias lg lazygit
 
 # A better way to use yazi(change directory when exit)
