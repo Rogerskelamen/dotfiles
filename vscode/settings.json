@@ -3,6 +3,7 @@
  * default shortcut:
  *  - gd: goto the definition
  *  - gh: show hover
+ *  - gb: multi cursor selection
  */
 {
     /* General Config */
@@ -11,6 +12,7 @@
     "extensions.autoUpdate": "onlyEnabledExtensions",
     "extensions.ignoreRecommendations": true,
     "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "never",
     /* Theme */
     "workbench.colorTheme": "One Dark Pro",
     "workbench.iconTheme": "material-icon-theme",
@@ -18,7 +20,8 @@
     "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontSize": 17,
     "editor.fontLigatures": true,
-    "editor.minimap.autohide": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.autohide": "mouseover",
     "editor.stickyScroll.enabled": true,
     "editor.smoothScrolling": true,
     "editor.linkedEditing": true,
@@ -30,6 +33,12 @@
     /* Terminal */
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.suggest.enabled": false,
+    "terminal.integrated.inheritEnv": false,
+    "workbench.colorCustomizations": {
+        "terminal.background": "#00000000" // transparent terminal
+    },
     /* bracket */
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -38,159 +47,383 @@
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.highlightedyank.enable": true,
-    "vim.highlightedyank.color": "rgba(230, 100, 170, 0.7)",
+    "vim.highlightedyank.color": "rgba(89, 100, 170, 0.75)",
     "vim.foldfix": true, // consistent fold
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<S-s>"],
-            "commands": ["workbench.action.files.save"],
+            "before": [
+                "<S-s>"
+            ],
+            "commands": [
+                "workbench.action.files.save"
+            ],
             "silent": true
         },
         {
-            "before": ["<S-q>"],
-            "commands": ["workbench.action.closeActiveEditor"],
+            "before": [
+                "<S-q>"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ],
             "silent": true
         },
         {
-            "before": ["<leader>", "o"],
-            "commands": ["editor.toggleFold"],
+            "before": [
+                "<leader>",
+                "o"
+            ],
+            "commands": [
+                "editor.toggleFold"
+            ],
             "silent": true
         },
         {
-            "before": ["<C-a>"],
-            "after": ["g", "g", "V", "G"]
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "g",
+                "g",
+                "V",
+                "G"
+            ]
         },
         {
-            "before": ["<S-j>"],
-            "after": ["5", "j"],
+            "before": [
+                "<S-j>"
+            ],
+            "after": [
+                "5",
+                "j"
+            ],
         },
         {
-            "before": ["<S-k>"],
-            "after": ["5", "k"],
+            "before": [
+                "<S-k>"
+            ],
+            "after": [
+                "5",
+                "k"
+            ],
         },
         {
-            "before": ["<S-h>"],
-            "after": ["^"],
+            "before": [
+                "<S-h>"
+            ],
+            "after": [
+                "^"
+            ],
         },
         {
-            "before": ["<S-l>"],
-            "after": ["$"],
+            "before": [
+                "<S-l>"
+            ],
+            "after": [
+                "$"
+            ],
         },
         {
-            "before": ["<S-w>"],
-            "after": ["5", "w"],
+            "before": [
+                "<S-w>"
+            ],
+            "after": [
+                "5",
+                "w"
+            ],
         },
         {
-            "before": ["<S-b>"],
-            "after": ["5", "b"],
+            "before": [
+                "<S-b>"
+            ],
+            "after": [
+                "5",
+                "b"
+            ],
         },
         {
-            "before": ["t", "l"],
-            "commands": [":tabnext"],
+            "before": [
+                "t",
+                "l"
+            ],
+            "commands": [
+                ":tabnext"
+            ],
             "silent": true
         },
         {
-            "before": ["t", "h"],
-            "commands": [":tabprev"],
+            "before": [
+                "t",
+                "h"
+            ],
+            "commands": [
+                ":tabprev"
+            ],
             "silent": true
         },
         /* window */
         {
-            "before": ["<leader>", "h"],
-            "after": ["<C-w>", "h"]
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "after": [
+                "<C-w>",
+                "h"
+            ]
         },
         {
-            "before": ["<leader>", "j"],
-            "after": ["<C-w>", "j"]
+            "before": [
+                "<leader>",
+                "j"
+            ],
+            "after": [
+                "<C-w>",
+                "j"
+            ]
         },
         {
-            "before": ["<leader>", "k"],
-            "after": ["<C-w>", "k"]
+            "before": [
+                "<leader>",
+                "k"
+            ],
+            "after": [
+                "<C-w>",
+                "k"
+            ]
         },
         {
-            "before": ["<leader>", "l"],
-            "after": ["<C-w>", "l"]
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "after": [
+                "<C-w>",
+                "l"
+            ]
         },
         {
-            "before": ["<leader>", "s"],
-            "commands": [":sp"],
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                ":sp"
+            ],
             "silent": true
         },
         {
-            "before": ["<leader>", "v"],
-            "commands": [":vsp"],
+            "before": [
+                "<leader>",
+                "v"
+            ],
+            "commands": [
+                ":vsp"
+            ],
             "silent": true
         },
         /* file explorer */
         {
-            "before": ["<leader>", "e"],
+            "before": [
+                "<leader>",
+                "e"
+            ],
             // "commands": ["workbench.view.explorer"],
-            "commands": ["workbench.action.toggleSidebarVisibility"],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ],
             "silent": true
         },
         {
-            "before": ["<leader>", "b"],
-            "commands": ["workbench.action.toggleActivityBarVisibility"],
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.toggleActivityBarVisibility"
+            ],
             "silent": true
         },
         {
-            "before": ["<leader>", "/"],
-            "commands": [":nohl"],
+            "before": [
+                "<leader>",
+                "f",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ],
             "silent": true
         },
         {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"],
+            "before": [
+                "<leader>",
+                "f",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ],
             "silent": true
         },
         {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"],
+            "before": [
+                "<leader>",
+                "f",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.openRecent"
+            ],
             "silent": true
         },
         {
-            "before": ["g", "]"],
-            "commands": ["editor.action.marker.next"],
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                ":nohl"
+            ],
             "silent": true
         },
         {
-            "before": ["g", "["],
-            "commands": ["editor.action.marker.prev"],
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ],
             "silent": true
         },
         {
-            "before": ["g", "n"],
-            "commands": ["editor.action.rename"],
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ],
             "silent": true
         },
         {
-            "before": ["g", "x"],
-            "commands": ["editor.action.quickFix"],
+            "before": [
+                "g",
+                "]"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "["
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.referenceSearch.trigger"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "x"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ],
             "silent": true
         },
         /* git hunk */
         // {
         //     "before": ["<leader>", "<S-h>"],
-        //     "commands": ["workbench.view.scm"],
+        //     "commands": ["git.openChange"],
         //     "silent": true
         // },
         {
-            "before": ["g", "="],
-            "commands": ["workbench.action.editor.nextChange"],
+            "before": [
+                "g",
+                "="
+            ],
+            "commands": [
+                "workbench.action.editor.nextChange"
+            ],
             "silent": true
         },
         {
-            "before": ["g", "-"],
-            "commands": ["workbench.action.editor.previousChange"],
+            "before": [
+                "g",
+                "-"
+            ],
+            "commands": [
+                "workbench.action.editor.previousChange"
+            ],
             "silent": true
         },
         {
-            "before": ["<leader>", "c", "<leader>"],
-            "after": ["g", "c", "c"]
+            "before": [
+                "<leader>",
+                "c",
+                "<leader>"
+            ],
+            "after": [
+                "g",
+                "c",
+                "c"
+            ]
         },
         {
-            "before": ["<leader>", "c", "b"],
-            "after": ["g", "C", "C"]
+            "before": [
+                "<leader>",
+                "c",
+                "b"
+            ],
+            "after": [
+                "g",
+                "C",
+                "C"
+            ]
         }
         // {
         //     "before": [":"],
@@ -202,47 +435,93 @@
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<S-j>"],
-            "after": ["5", "j"],
+            "before": [
+                "<S-j>"
+            ],
+            "after": [
+                "5",
+                "j"
+            ],
         },
         {
-            "before": ["<S-k>"],
-            "after": ["5", "k"],
+            "before": [
+                "<S-k>"
+            ],
+            "after": [
+                "5",
+                "k"
+            ],
         },
         {
-            "before": ["<S-h>"],
-            "after": ["^"],
+            "before": [
+                "<S-h>"
+            ],
+            "after": [
+                "^"
+            ],
         },
         {
-            "before": ["<S-l>"],
-            "after": ["$", "h"],
+            "before": [
+                "<S-l>"
+            ],
+            "after": [
+                "$",
+                "h"
+            ],
         },
         {
-            "before": ["<S-w>"],
-            "after": ["5", "w"],
+            "before": [
+                "<S-w>"
+            ],
+            "after": [
+                "5",
+                "w"
+            ],
         },
         {
-            "before": ["<S-b>"],
-            "after": ["5", "b"],
+            "before": [
+                "<S-b>"
+            ],
+            "after": [
+                "5",
+                "b"
+            ],
         },
         {
-            "before": ["p"],
-            "after": ["p", "g", "v", "y"]
+            "before": [
+                "p"
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
         },
         {
-            "before": ["<leader>", "c", "<leader>"],
-            "after": ["g", "c"]
+            "before": [
+                "<leader>",
+                "c",
+                "<leader>"
+            ],
+            "after": [
+                "g",
+                "c"
+            ]
         },
         {
-            "before": ["<leader>", "c", "b"],
-            "after": ["g", "C"]
+            "before": [
+                "<leader>",
+                "c",
+                "b"
+            ],
+            "after": [
+                "g",
+                "C"
+            ]
         }
     ],
-    /* python */
-    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
-    /* vue */
-    "vetur.ignoreProjectWarning": true,
-    // 对四种前端语言设置缩进为2个空格
+    // frontend lang indentation
     "[html]": {
         "editor.tabSize": 2
     },
@@ -256,26 +535,12 @@
         "editor.tabSize": 2
     },
     "[vue]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "Vue.volar"
     },
-
-    /* Code Runner */
-    "code-runner.runInTerminal": true,
-    // 更改code runner的部分语言的 map样式
-    "code-runner.executorMap": {
-        // "python": "python -u",
-        "python": "$pythonPath $fullFileName",
-        // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    },
-
     /* Flutter and Dart */
     "[dart]": {
         "editor.formatOnSave": false,
         "editor.formatOnType": false,
     },
-    // 对flutter运行指令参数添加“忽略safety模式”
-    // "dart.flutterAdditionalArgs": [
-    //     "--no-sound-null-safety"
-    // ]
 }
