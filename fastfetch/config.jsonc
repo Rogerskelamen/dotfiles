@@ -46,7 +46,6 @@
     {
       "type": "localip",
       "key": "└ 󰩠 ",
-      "showIpv6": true,
       "showMac": true,
       "compact": true,
       "keyColor": "36"

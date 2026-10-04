@@ -262,7 +262,7 @@ yay -S ueberzug
 
 为了ranger更好的用户体验，我还安装了以下插件:
 
-- [ranger-devicons2](https://github.com/cdump/ranger-devicons2)
+- [ranger-devicons](https://github.com/alexanderjeurissen/ranger_devicons)
 
     用glyphs图标的形式显示文件的类型
 
