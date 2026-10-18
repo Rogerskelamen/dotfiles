@@ -1,0 +1,44 @@
+[display]
+time_format = "%m-%d %a %H:%M"
+show_time = true
+issue = true
+
+[layout]
+width = 60
+window_padding = 1
+container_padding = 1
+prompt_padding = 1
+
+[remember]
+username = true
+session = true
+
+[secret]
+mode = "characters"
+characters = "*"
+
+[background]
+kind = "matrix"
+fps = 30
+
+[background.matrix]
+head_color   = "#ccffcc"
+bright_color = "#33ff66"
+dim_color    = "#006622"
+min_length = 8
+max_length = 20
+min_speed = 0.3
+max_speed = 1.0
+mutate_chance = 0.05
+
+[theme]
+border    = "green"
+text      = "green"
+time      = "bright-green"
+container = "black"
+title     = "yellow"
+greet     = "green"
+prompt    = "green"
+input     = "green"
+action    = "green"
+button    = "green"

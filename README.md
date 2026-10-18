@@ -245,7 +245,7 @@ patch:
 如果使用了我的dotfiles，就需要安装对应的软件来确保ranger能够正确预览文件：
 
 ```bash
-yay -S ffmpegthumbnailer epub-thumbnailer-git fontforge
+yay -S python-pdftotext ffmpegthumbnailer epub-thumbnailer-git fontforge
 ```
 
 除此之外，为了使用kitty下的图片预览功能，还需要安装imagemagick:
